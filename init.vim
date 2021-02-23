@@ -7,8 +7,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-syntastic/syntastic'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+Plug 'mattn/emmet-vim'
 
-" themes
+" Themes
+
+
 
 call plug#end()
 
@@ -32,20 +39,21 @@ set wrap breakindent
 set encoding=utf-8
 set number
 set title
-let mapleader=","
+set splitbelow splitright
+set path=.,,**
+set wildignore+=**/node_modules/** 
 
+let mapleader=","
 
 
 
 " Shortcuts
 nnoremap <silent> <leader><space> :noh<CR>
-imap <leader><leader> <C-y>,
 nmap <leader><leader> <C-y>,
-noremap <leader>ne :NERDTreeToggle<CR>
+noremap <silent> <leader>ne :NERDTree \| NERDTreeRefreshRoot<CR>
 
 
-
-" Neovim :Terminal
+" ,eovim :Terminal
 tmap <Esc> <C-\><C-n>
 
 
@@ -54,7 +62,7 @@ tmap <Esc> <C-\><C-n>
 " Plugin configuration
 let NERDTreeShowHidden=1
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 
@@ -62,3 +70,5 @@ let g:airline_section_warning = ''
 " Modules
 
 source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/syntastic.vim
+source $HOME/.config/nvim/config/fuzzy.vim
