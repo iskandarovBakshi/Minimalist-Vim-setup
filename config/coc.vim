@@ -167,15 +167,15 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>p
 
 
 let g:coc_global_extensions = [
-  \ 'coc-snippets'
-  \ 'coc-prettier'
-  \ 'coc-marketplace'
-  \ 'coc-json'
-  \ 'coc-html'
-  \ 'coc-git'
-  \ 'coc-eslint'
-  \ 'coc-emmet'
-  \ 'coc-tsserver'
-  \ 'coc-css'
-  \ 'coc-angular'
+  \ 'coc-snippets',
+  \ 'coc-prettier',
+  \ 'coc-marketplace',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-git',
+  \ 'coc-eslint',
+  \ 'coc-emmet',
+  \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-angular',
       \]

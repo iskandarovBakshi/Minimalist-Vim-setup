@@ -12,6 +12,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'mattn/emmet-vim'
+Plug 'morhetz/gruvbox'
+Plug 'gertjanreynaert/cobalt2-vim-theme'
 
 " Themes
 
@@ -22,13 +24,6 @@ call plug#end()
 syntax on
 set number
 set relativenumber
-highlight Pmenu guibg=white guifg=black gui=bold
-highlight Comment gui=bold
-highlight Normal gui=none
-highlight NonText guibg=none
-set termguicolors
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
 filetype plugin indent on
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
@@ -42,6 +37,14 @@ set title
 set splitbelow splitright
 set path=.,,**
 set wildignore+=**/node_modules/** 
+colorscheme cobalt2
+highlight Pmenu guibg=white guifg=black gui=bold
+highlight Comment gui=bold
+highlight Normal gui=none
+highlight NonText guibg=none
+set termguicolors
+highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
 
 let mapleader=","
 
