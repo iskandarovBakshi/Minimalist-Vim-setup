@@ -1,23 +1,20 @@
 
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
-Plug 'mattn/emmet-vim'
-Plug 'morhetz/gruvbox'
-Plug 'gertjanreynaert/cobalt2-vim-theme'
-
-" Themes
-
-
+    Plug 'scrooloose/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim-syntastic/syntastic'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
+    Plug 'mattn/emmet-vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'gertjanreynaert/cobalt2-vim-theme'
+    Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -37,10 +34,6 @@ set title
 set splitbelow splitright
 set path=.,,**
 set wildignore+=**/node_modules/** 
-colorscheme cobalt2
-set termguicolors
-highlight Normal ctermbg=None
-
 let mapleader=","
 
 
@@ -61,9 +54,18 @@ tmap <Esc> <C-\><C-n>
 " Plugin configuration
 let NERDTreeShowHidden=1
 " Airline
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
+let g:airline#extensions#tabline#enabled = 1
+
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+"autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+highlight Normal ctermbg=none guibg=none
+highlight SignColumn ctermbg=none guibg=none
+highlight LineNr ctermbg=none guibg=none
 
 
 " Modules
