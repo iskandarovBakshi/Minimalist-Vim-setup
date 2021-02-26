@@ -38,13 +38,8 @@ set splitbelow splitright
 set path=.,,**
 set wildignore+=**/node_modules/** 
 colorscheme cobalt2
-highlight Pmenu guibg=white guifg=black gui=bold
-highlight Comment gui=bold
-highlight Normal gui=none
-highlight NonText guibg=none
 set termguicolors
-highlight Normal guibg=NONE ctermbg=NONE
-highlight LineNr guibg=NONE ctermbg=NONE
+highlight Normal ctermbg=None
 
 let mapleader=","
 
@@ -54,6 +49,7 @@ let mapleader=","
 nnoremap <silent> <leader><space> :noh<CR>
 nmap <leader><leader> <C-y>,
 noremap <silent> <leader>ne :NERDTree \| NERDTreeRefreshRoot<CR>
+nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
 
 " ,eovim :Terminal
