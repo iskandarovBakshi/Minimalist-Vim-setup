@@ -1,75 +1,96 @@
-
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
-
-    Plug 'scrooloose/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'vim-syntastic/syntastic'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
-    Plug 'mattn/emmet-vim'
-    Plug 'morhetz/gruvbox'
-    Plug 'gertjanreynaert/cobalt2-vim-theme'
-    Plug 'joshdick/onedark.vim'
-
+	Plug 'preservim/nerdtree'
+	Plug 'ryanoasis/vim-devicons'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'tpope/vim-fugitive'
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'jparise/vim-graphql'
+  Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'], 
+  \ 'do': 'make install'
+\}
+  Plug 'chr4/nginx.vim'
+	" Themes
+	Plug 'morhetz/gruvbox'
+	Plug 'joshdick/onedark.vim'
+	Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
+
+
+
+" Options
 syntax on
+filetype plugin indent on
+set encoding=UTF-8
+
+
+set hidden
 set number
 set relativenumber
-filetype plugin indent on
+set splitbelow splitright
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
-set ruler laststatus=2 showcmd showmode
-set list listchars=trail:»,tab:»-
-set fillchars+=vert:\ 
-set wrap breakindent
-set encoding=utf-8
-set number
+set background=dark
 set title
-set splitbelow splitright
 set path=.,,**
-set wildignore+=**/node_modules/** 
-let mapleader=","
-
-
-
-" Shortcuts
-nnoremap <silent> <leader><space> :noh<CR>
-nmap <leader><leader> <C-y>,
-noremap <silent> <leader>ne :NERDTree \| NERDTreeRefreshRoot<CR>
-nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
-
-
-" ,eovim :Terminal
-tmap <Esc> <C-\><C-n>
-
-
-
-
-" Plugin configuration
-let NERDTreeShowHidden=1
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
-let g:airline_section_warning = ''
-let g:airline#extensions#tabline#enabled = 1
-
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set wildignore+=**/node_modules/**
+set list listchars=trail:»,tab:»-
 set termguicolors
-"autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+set ruler
+set cursorline
+colorscheme dracula
 highlight Normal ctermbg=none guibg=none
 highlight SignColumn ctermbg=none guibg=none
 highlight LineNr ctermbg=none guibg=none
 
 
-" Modules
 
-source $HOME/.config/nvim/config/coc.vim
-source $HOME/.config/nvim/config/syntastic.vim
-source $HOME/.config/nvim/config/fuzzy.vim
+" Variables and Functions
+let mapleader = ','
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+
+
+
+
+
+" Shortcuts
+noremap <silent> <leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <leader><space> :noh<CR>
+nmap <silent> <space>q <C-w>q
+nmap <silent> <space>h :bp<CR>
+nmap <silent> <space>l :bl<CR>
+noremap <silent> <C-s> :w<CR>
+nnoremap <silent> <C-b> :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
+noremap <silent> <C-p> :Files<CR>
+noremap <silent> <C-f> :Rg<CR>
+nmap <silent> <C-h> <C-w>h
+nmap <silent> <C-l> <C-w>l
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <leader>z :JsDoc<CR>
+
+
+
+
+" Modules
+source $HOME/.config/nvim/plugins/coc.vim

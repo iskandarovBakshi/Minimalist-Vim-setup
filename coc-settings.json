@@ -1,4 +1,2 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json", "scss"],
-  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets"
 }
