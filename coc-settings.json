@@ -1,2 +1,13 @@
 {
+  "eslint.autoFixOnSave": true,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "css",
+    "scss"
+  ]
 }

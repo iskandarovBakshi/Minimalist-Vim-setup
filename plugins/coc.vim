@@ -122,4 +122,22 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-marketplace',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-git',
+  \ 'coc-emmet',
+  \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-angular',
+      \]
 
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
