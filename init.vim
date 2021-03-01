@@ -12,6 +12,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
+  Plug 'mattn/emmet-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
@@ -76,6 +77,7 @@ let g:fzf_action = {
 " Shortcuts
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <leader><space> :noh<CR>
+imap <silent> <leader>e <C-y>,
 nmap <silent> <space>q <C-w>q
 nmap <silent> <space>h :bp<CR>
 nmap <silent> <space>l :bl<CR>
