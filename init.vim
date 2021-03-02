@@ -52,7 +52,7 @@ set list listchars=trail:»,tab:»-
 set termguicolors
 set ruler
 set cursorline
-colorscheme dracula
+colorscheme gruvbox
 highlight Normal ctermbg=none guibg=none
 highlight SignColumn ctermbg=none guibg=none
 highlight LineNr ctermbg=none guibg=none
