@@ -62,13 +62,18 @@ highlight LineNr ctermbg=none guibg=none
 let mapleader = ','
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let NERDTreeShowHidden=1
+
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-
+if has("nvim")
+  au! TermOpen * tnoremap <Esc> <c-\><c-n>
+  au! FileType fzf tunmap <Esc>
+endif
 
 
 
@@ -77,12 +82,13 @@ let g:fzf_action = {
 " Shortcuts
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <leader><space> :noh<CR>
+noremap <silent> <leader>b :Buffers<CR>
 imap <silent> <leader>e <C-y>,
-nmap <silent> <space>q <C-w>q
+nmap <silent> <space>q <space>h:bd #<CR>
 nmap <silent> <space>h :bp<CR>
-nmap <silent> <space>l :bl<CR>
+nmap <silent> <space>l :bn<CR>
 noremap <silent> <C-s> :w<CR>
-nnoremap <silent> <C-b> :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
+nnoremap <silent> <C-b> :NERDTree % \| NERDTreeRefreshRoot<CR>
 noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-f> :Rg<CR>
 nmap <silent> <C-h> <C-w>h
@@ -90,8 +96,8 @@ nmap <silent> <C-l> <C-w>l
 nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <leader>z :JsDoc<CR>
-
-
+nnoremap <silent> <C-v> "+p
+inoremap <silent> <C-v> <ESC>"+p
 
 
 " Modules
