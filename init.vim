@@ -2,6 +2,7 @@
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
+
 	Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'vim-airline/vim-airline'
@@ -63,6 +64,7 @@ let mapleader = ','
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
+let g:spotify_show_status = 1
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -88,7 +90,8 @@ nmap <silent> <space>q <space>h:bd #<CR>
 nmap <silent> <space>h :bp<CR>
 nmap <silent> <space>l :bn<CR>
 noremap <silent> <C-s> :w<CR>
-nnoremap <silent> <C-b> :NERDTree % \| NERDTreeRefreshRoot<CR>
+nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-f> :Rg<CR>
 nmap <silent> <C-h> <C-w>h
