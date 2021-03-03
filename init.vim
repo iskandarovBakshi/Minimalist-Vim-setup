@@ -45,6 +45,7 @@ set relativenumber
 set splitbelow splitright
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
 set incsearch ignorecase smartcase hlsearch
+set nowrap
 set background=dark
 set title
 set path=.,,**
@@ -53,6 +54,7 @@ set list listchars=trail:»,tab:»-
 set termguicolors
 set ruler
 set cursorline
+set scrolloff=8
 colorscheme gruvbox
 highlight Normal ctermbg=none guibg=none
 highlight SignColumn ctermbg=none guibg=none
@@ -61,7 +63,7 @@ highlight LineNr ctermbg=none guibg=none
 
 
 " Variables and Functions
-let mapleader = ','
+let mapleader = ' '
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
@@ -83,29 +85,29 @@ endif
 
 
 " Shortcuts
-noremap <silent> <leader>sv :source $MYVIMRC<CR>
-nnoremap <silent> <leader><space> :noh<CR>
-noremap <silent> <leader>b :Buffers<CR>
-imap <silent> <leader>e <C-y>,
-nmap <silent> <space>q <space>h:bd #<CR>
-nmap <silent> <space>h :bp<CR>
-nmap <silent> <space>l :bn<CR>
-noremap <silent> <C-s> :w<CR>
-nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
-noremap <silent> <C-p> :Files<CR>
-noremap <silent> <C-f> :Rg<CR>
-nmap <silent> <C-h> <C-w>h
-nmap <silent> <C-l> <C-w>l
-nmap <silent> <C-j> <C-w>j
-nmap <silent> <C-k> <C-w>k
-nmap <leader>z :JsDoc<CR>
-nnoremap <silent> <C-v> "+p
-inoremap <silent> <C-v> <ESC>"+p
-nnoremap gdh :diffget //2<CR>
-nnoremap gdl :diffget //3<CR>
-nmap <silent> <leader>gs :G<CR>
-nnoremap <leader>gc :GBranches<CR>
+noremap <silent> <leader>sv :source $MYVIMRC<CR> " Source vimrc
+nnoremap <silent> <leader><leader> :noh<CR> " Clear highlight word
+noremap <silent> <leader>b :Buffers<CR> " Buffers list fzf
+imap <silent> <leader>e <C-y>, " Emmet toggle
+nmap <silent> <leader>q <leader>h:bd #<CR> " Quit buffer
+nmap <silent> <leader>h :bp<CR> " Previous Buffer
+nmap <silent> <leader>l :bn<CR> " Next buffer
+nmap <silent> <leader>gs :G<CR> " Show git index
+nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR> " Nerd menu
+nnoremap <leader>nf :NERDTreeFind<CR> " Focus file in Nerd menu
+nmap <leader>z :JsDoc<CR> " JSDOC
+nnoremap <leader>gc :GBranches<CR> " Show branches
+noremap <silent> <C-s> :w<CR> " Save buffer
+noremap <silent> <C-p> :Files<CR> " FZF Files
+noremap <silent> <C-f> :Rg<CR> " FZF Files content
+nmap <silent> <C-h> <C-w>h " Buffer left
+nmap <silent> <C-l> <C-w>l " Buffer right
+nmap <silent> <C-j> <C-w>j " Buffer bottom
+nmap <silent> <C-k> <C-w>k " Buffer top
+nnoremap <silent> <C-v> "+p " Paste system clipboard
+inoremap <silent> <C-v> <ESC>"+p " Paste system clipboard INSERT mode
+nnoremap gdh :diffget //2<CR> " Accept left in merge conflict
+nnoremap gdl :diffget //3<CR> " Accept right in merge conflict
 
 
 
