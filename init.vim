@@ -85,29 +85,52 @@ endif
 
 
 " Shortcuts
-noremap <silent> <leader>sv :source $MYVIMRC<CR> " Source vimrc
-nnoremap <silent> <leader><leader> :noh<CR> " Clear highlight word
-noremap <silent> <leader>b :Buffers<CR> " Buffers list fzf
-imap <silent> <leader>e <C-y>, " Emmet toggle
-nmap <silent> <leader>q <leader>h:bd #<CR> " Quit buffer
-nmap <silent> <leader>h :bp<CR> " Previous Buffer
-nmap <silent> <leader>l :bn<CR> " Next buffer
-nmap <silent> <leader>gs :G<CR> " Show git index
-nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR> " Nerd menu
-nnoremap <leader>nf :NERDTreeFind<CR> " Focus file in Nerd menu
-nmap <leader>z :JsDoc<CR> " JSDOC
-nnoremap <leader>gc :GBranches<CR> " Show branches
-noremap <silent> <C-s> :w<CR> " Save buffer
-noremap <silent> <C-p> :Files<CR> " FZF Files
-noremap <silent> <C-f> :Rg<CR> " FZF Files content
-nmap <silent> <C-h> <C-w>h " Buffer left
-nmap <silent> <C-l> <C-w>l " Buffer right
-nmap <silent> <C-j> <C-w>j " Buffer bottom
-nmap <silent> <C-k> <C-w>k " Buffer top
-nnoremap <silent> <C-v> "+p " Paste system clipboard
-inoremap <silent> <C-v> <ESC>"+p " Paste system clipboard INSERT mode
-nnoremap gdh :diffget //2<CR> " Accept left in merge conflict
-nnoremap gdl :diffget //3<CR> " Accept right in merge conflict
+" Source vimrc
+noremap <silent> <leader>sv :source $MYVIMRC<CR> 
+" Clear highlight word
+nnoremap <silent> <leader><leader> :noh<CR> 
+" Buffers list fzf
+noremap <silent> <leader>b :Buffers<CR> 
+" Emmet toggle
+imap <silent> <leader>e <C-y>, 
+" Quit buffer
+nmap <silent> <leader>q <leader>h:bd #<CR> 
+" Previous Buffer
+nmap <silent> <leader>h :bp<CR> 
+" Next buffer
+nmap <silent> <leader>l :bn<CR> 
+" Show git index
+nmap <silent> <leader>gs :G<CR> 
+" Nerd menu
+nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR> 
+" Focus file in Nerd menu
+nnoremap <leader>nf :NERDTreeFind<CR> 
+" JSDOC
+nmap <leader>z :JsDoc<CR> 
+" Show branches
+nnoremap <leader>gc :GBranches<CR> 
+" Save buffer
+noremap <silent> <C-s> :w<CR> 
+" FZF Files
+noremap <silent> <C-p> :Files<CR> 
+" FZF Files content
+noremap <silent> <C-f> :Rg<CR> 
+" Buffer left
+nmap <silent> <C-h> <C-w>h 
+" Buffer right
+nmap <silent> <C-l> <C-w>l 
+" Buffer bottom
+nmap <silent> <C-j> <C-w>j 
+" Buffer top
+nmap <silent> <C-k> <C-w>k 
+" Paste system clipboard
+nnoremap <silent> <C-v> "+p 
+" Paste system clipboard INSERT mode
+inoremap <silent> <C-v> <ESC>"+p 
+" Accept left in merge conflict
+nnoremap gdh :diffget //2<CR> 
+" Accept right in merge conflict
+nnoremap gdl :diffget //3<CR>
 
 
 
