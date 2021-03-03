@@ -3,31 +3,31 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-	Plug 'preservim/nerdtree'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'tpope/vim-fugitive'
-  Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'mattn/emmet-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'jparise/vim-graphql'
-  Plug 'heavenshell/vim-jsdoc', {
-  \ 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'],
-  \ 'do': 'make install'
-\}
-  Plug 'chr4/nginx.vim'
-  Plug 'stsewd/fzf-checkout.vim'
-	" Themes
-	Plug 'morhetz/gruvbox'
-	Plug 'joshdick/onedark.vim'
-	Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'sheerun/vim-polyglot'
+    Plug 'preservim/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'tpope/vim-fugitive'
+    Plug 'pangloss/vim-javascript'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'mattn/emmet-vim'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'jparise/vim-graphql'
+    Plug 'heavenshell/vim-jsdoc', {
+        \ 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'],
+        \ 'do': 'make install'
+    \}
+    Plug 'chr4/nginx.vim'
+    Plug 'stsewd/fzf-checkout.vim'
+    " Themes
+    Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
+    Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 
@@ -43,7 +43,7 @@ set hidden
 set number
 set relativenumber
 set splitbelow splitright
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
 set incsearch ignorecase smartcase hlsearch
 set background=dark
 set title
