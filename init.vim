@@ -22,6 +22,7 @@ call plug#begin(stdpath('data') . '/plugged')
   \ 'do': 'make install'
 \}
   Plug 'chr4/nginx.vim'
+  Plug 'stsewd/fzf-checkout.vim'
 	" Themes
 	Plug 'morhetz/gruvbox'
 	Plug 'joshdick/onedark.vim'
@@ -105,6 +106,21 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
 nmap <silent> <leader>gs :G<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 " Modules
