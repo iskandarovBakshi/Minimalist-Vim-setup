@@ -20,6 +20,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'], 'do': 'make install' }
     Plug 'chr4/nginx.vim'
     Plug 'stsewd/fzf-checkout.vim'
+    Plug 'fatih/vim-go'
     " Themes
     Plug 'morhetz/gruvbox'
     Plug 'joshdick/onedark.vim'
@@ -81,54 +82,55 @@ endif
 
 
 
-" Shortcuts
+" ======  Shortcuts  ======
 " Source vimrc
-noremap <silent> <leader>sv :source $MYVIMRC<CR> 
+noremap <silent> <leader>sv :source $MYVIMRC<CR>
 " Clear highlight word
-nnoremap <silent> <leader><leader> :noh<CR> 
+nnoremap <silent> <leader>n :noh<CR>
 " Buffers list fzf
-noremap <silent> <leader>b :Buffers<CR> 
+noremap <silent> <leader>b :Buffers<CR>
 " Emmet toggle
-imap <silent> <leader>e <C-y>, 
+imap <silent> <leader>e <C-y>,
 " Quit buffer
-nmap <silent> <leader>q <leader>h:bd #<CR> 
+nmap <silent> <leader>q <leader>h:bd #<CR>
 " Previous Buffer
-nmap <silent> <leader>h :bp<CR> 
+nmap <silent> <leader>h :bp<CR>
 " Next buffer
-nmap <silent> <leader>l :bn<CR> 
+nmap <silent> <leader>l :bn<CR>
 " Show git index
-nmap <silent> <leader>gs :G<CR> 
+nmap <silent> <leader>gs :G<CR>
 " Nerd menu
-nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR> 
+nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
 " Focus file in Nerd menu
-nnoremap <leader>nf :NERDTreeFind<CR> 
+nnoremap <leader>nf :NERDTreeFind<CR>
 " JSDOC
-nmap <leader>z :JsDoc<CR> 
+nmap <leader>z :JsDoc<CR>
 " Show branches
-nnoremap <leader>gc :GBranches<CR> 
+nnoremap <leader>gc :GBranches<CR>
 " Save buffer
-noremap <silent> <C-s> :w<CR> 
+noremap <silent> <C-s> :w<CR>
 " FZF Files
-noremap <silent> <C-p> :Files<CR> 
+noremap <silent> <C-p> :Files<CR>
 " FZF Files content
-noremap <silent> <C-f> :Rg<CR> 
+noremap <silent> <C-f> :Rg<CR>
 " Buffer left
 nmap <silent> <C-h> <C-w>h 
 " Buffer right
 nmap <silent> <C-l> <C-w>l 
 " Buffer bottom
-nmap <silent> <C-j> <C-w>j 
+nmap <silent> <C-j> <C-w>j
 " Buffer top
 nmap <silent> <C-k> <C-w>k 
 " Paste system clipboard
 nnoremap <silent> <C-v> "+p 
 " Paste system clipboard INSERT mode
-inoremap <silent> <C-v> <ESC>"+p 
+inoremap <silent> <C-v> <ESC>"+p
 " Accept left in merge conflict
-nnoremap gdh :diffget //2<CR> 
+nnoremap gdh :diffget //2<CR>
 " Accept right in merge conflict
 nnoremap gdl :diffget //3<CR>
 
 
 " Modules
 source $HOME/.config/nvim/plugins/coc.vim
+source $HOME/.config/nvim/plugins/go.vim
