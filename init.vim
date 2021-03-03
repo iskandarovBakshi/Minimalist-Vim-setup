@@ -107,3 +107,7 @@ inoremap <silent> <C-v> <ESC>"+p
 
 " Modules
 source $HOME/.config/nvim/plugins/coc.vim
+
+
+
+
