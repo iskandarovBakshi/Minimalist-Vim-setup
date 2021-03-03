@@ -102,10 +102,10 @@ nmap <silent> <C-k> <C-w>k
 nmap <leader>z :JsDoc<CR>
 nnoremap <silent> <C-v> "+p
 inoremap <silent> <C-v> <ESC>"+p
-tnoremap <Esc> <C-\><C-n>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
 nmap <silent> <leader>gs :G<CR>
+nnoremap <leader>gc :GBranches<CR>
 
 
 
