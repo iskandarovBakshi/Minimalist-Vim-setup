@@ -17,8 +17,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
-  Plug 'heavenshell/vim-jsdoc', { 
-  \ 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'], 
+  Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'],
   \ 'do': 'make install'
 \}
   Plug 'chr4/nginx.vim'
