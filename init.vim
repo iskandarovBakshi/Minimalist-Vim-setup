@@ -85,7 +85,6 @@ endif
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <leader><space> :noh<CR>
 noremap <silent> <leader>b :Buffers<CR>
-nmap <silent> <leader>gs :G<CR>
 imap <silent> <leader>e <C-y>,
 nmap <silent> <space>q <space>h:bd #<CR>
 nmap <silent> <space>h :bp<CR>
@@ -102,7 +101,10 @@ nmap <silent> <C-k> <C-w>k
 nmap <leader>z :JsDoc<CR>
 nnoremap <silent> <C-v> "+p
 inoremap <silent> <C-v> <ESC>"+p
-
+tnoremap <Esc> <C-\><C-n>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
+nmap <silent> <leader>gs :G<CR>
 
 
 " Modules
