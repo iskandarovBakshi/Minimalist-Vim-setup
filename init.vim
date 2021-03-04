@@ -104,7 +104,7 @@ nnoremap <leader>nn :NERDTreeToggle \| NERDTreeRefreshRoot<CR>
 " Focus file in Nerd menu
 nnoremap <leader>nf :NERDTreeFind<CR>
 " JSDOC
-nmap <leader>z :JsDoc<CR>
+nmap <leader>jsd :JsDoc<CR>
 " Show branches
 nnoremap <leader>gc :GBranches<CR>
 " Save buffer
