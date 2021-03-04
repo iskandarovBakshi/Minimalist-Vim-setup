@@ -53,6 +53,7 @@ set termguicolors
 set ruler
 set cursorline
 set scrolloff=8
+set mouse+=a
 colorscheme gruvbox
 highlight Normal ctermbg=none guibg=none
 highlight SignColumn ctermbg=none guibg=none
@@ -73,6 +74,10 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+
+
 if has("nvim")
   au! TermOpen * tnoremap <Esc> <c-\><c-n>
   au! FileType fzf tunmap <Esc>
@@ -114,21 +119,28 @@ noremap <silent> <C-p> :Files<CR>
 " FZF Files content
 noremap <silent> <C-f> :Rg<CR>
 " Buffer left
-nmap <silent> <C-h> <C-w>h 
+nmap <silent> <C-h> <C-w>h
 " Buffer right
-nmap <silent> <C-l> <C-w>l 
+nmap <silent> <C-l> <C-w>l
 " Buffer bottom
 nmap <silent> <C-j> <C-w>j
 " Buffer top
-nmap <silent> <C-k> <C-w>k 
+nmap <silent> <C-k> <C-w>k
 " Paste system clipboard
-nnoremap <silent> <C-v> "+p 
+nnoremap <silent> <C-v> "+p
 " Paste system clipboard INSERT mode
 inoremap <silent> <C-v> <ESC>"+p
 " Accept left in merge conflict
 nnoremap gdh :diffget //2<CR>
 " Accept right in merge conflict
 nnoremap gdl :diffget //3<CR>
+
+if has('nvim')
+    tmap <silent> <C-h> <C-\><C-n><C-w>h
+    tmap <silent> <C-l> <C-\><C-n><C-w>l
+    tmap <silent> <C-j> <C-\><C-n><C-w>j
+    tmap <silent> <C-k> <C-\><C-n><C-w>k
+endif
 
 
 " Modules
