@@ -136,10 +136,10 @@ nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
 
 if has('nvim')
-    tmap <silent> <C-h> <C-\><C-n><C-w>h
-    tmap <silent> <C-l> <C-\><C-n><C-w>l
-    tmap <silent> <C-j> <C-\><C-n><C-w>j
-    tmap <silent> <C-k> <C-\><C-n><C-w>k
+    tmap <silent> <M-h> <C-\><C-n><C-w>h
+    tmap <silent> <M-l> <C-\><C-n><C-w>l
+    tmap <silent> <M-j> <C-\><C-n><C-w>j
+    tmap <silent> <M-k> <C-\><C-n><C-w>k
 endif
 
 
