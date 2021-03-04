@@ -86,7 +86,7 @@ endif
 " Source vimrc
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
 " Clear highlight word
-nnoremap <silent> <leader>n :noh<CR>
+nnoremap <silent> <leader>, :noh<CR>
 " Buffers list fzf
 noremap <silent> <leader>b :Buffers<CR>
 " Emmet toggle
