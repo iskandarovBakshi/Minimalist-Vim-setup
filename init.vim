@@ -43,7 +43,6 @@ set relativenumber
 set splitbelow splitright
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
 set incsearch ignorecase smartcase hlsearch
-set nowrap
 set background=dark
 set title
 set path=.,,**
