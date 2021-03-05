@@ -31,7 +31,7 @@ call plug#end()
 
 
 
-" Options
+" Global Options
 syntax on
 filetype plugin indent on
 set encoding=UTF-8
