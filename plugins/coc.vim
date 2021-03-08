@@ -133,17 +133,19 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-marketplace',
-  \ 'coc-json',
-  \ 'coc-html',
-  \ 'coc-git',
-  \ 'coc-emmet',
-  \ 'coc-tsserver',
-  \ 'coc-css',
-  \ 'coc-angular',
-  \ 'coc-go'
-      \]
+      \ 'coc-snippets',
+      \ 'coc-marketplace',
+      \ 'coc-json',
+      \ 'coc-html',
+      \ 'coc-git',
+      \ 'coc-emmet',
+      \ 'coc-tsserver',
+      \ 'coc-css',
+      \ 'coc-angular',
+      \ 'coc-go',
+      \ 'coc-vimlsp',
+      \ 'coc-docker'
+\]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']

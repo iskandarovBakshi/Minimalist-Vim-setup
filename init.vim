@@ -3,29 +3,34 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-    Plug 'preservim/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'vim-airline/vim-airline'
+    Plug 'preservim/nerdtree' " Side menu
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'ryanoasis/vim-devicons' " Icons for Plugins
+    Plug 'vim-airline/vim-airline' " Statusline
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "File search
     Plug 'junegunn/fzf.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive' " Vim git
     Plug 'pangloss/vim-javascript'
     Plug 'leafgarland/typescript-vim'
     Plug 'mattn/emmet-vim'
-    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'jparise/vim-graphql'
     Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'], 'do': 'make install' }
     Plug 'chr4/nginx.vim'
     Plug 'stsewd/fzf-checkout.vim'
     Plug 'fatih/vim-go'
+    Plug 'jparise/vim-graphql'
+    Plug 'sheerun/vim-polyglot'
     " Themes
+    Plug 'Rigellute/shades-of-purple.vim'
     Plug 'morhetz/gruvbox'
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'sheerun/vim-polyglot'
+    Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 
@@ -53,10 +58,7 @@ set ruler
 set cursorline
 set scrolloff=8
 set mouse+=a
-colorscheme gruvbox
-highlight Normal ctermbg=none guibg=none
-highlight SignColumn ctermbg=none guibg=none
-highlight LineNr ctermbg=none guibg=none
+colorscheme shades_of_purple
 
 
 
@@ -65,7 +67,8 @@ let mapleader = ' '
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
-let g:spotify_show_status = 1
+let g:shades_of_purple_airline = 1
+let g:airline_theme='shades_of_purple'
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -82,6 +85,7 @@ if has("nvim")
   au! FileType fzf tunmap <Esc>
 endif
 
+autocmd! FileType vim nnoremap <leader>rv :run %<CR>
 
 
 
@@ -89,6 +93,7 @@ endif
 " ======  Shortcuts  ======
 " Source vimrc
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
+nnoremap <silent><leader>1 :w \| :source ~/.vimrc \| :PlugInstall<CR>
 " Clear highlight word
 nnoremap <silent> <leader>, :noh<CR>
 " Buffers list fzf
@@ -128,7 +133,7 @@ nmap <silent> <C-k> <C-w>k
 " Paste system clipboard
 nnoremap <silent> <C-v> "+p
 " Paste system clipboard INSERT mode
-inoremap <silent> <C-v> <ESC>"+p
+inoremap <silent> <C-v> <ESC>"+pA
 " Accept left in merge conflict
 nnoremap gdh :diffget //2<CR>
 " Accept right in merge conflict
