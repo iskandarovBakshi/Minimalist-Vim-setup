@@ -10,6 +10,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "File search
     Plug 'junegunn/fzf.vim'
+    Plug 'stsewd/fzf-checkout.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-fugitive' " Vim git
     Plug 'pangloss/vim-javascript'
@@ -21,7 +22,6 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'jparise/vim-graphql'
     Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact', 'typescript'], 'do': 'make install' }
     Plug 'chr4/nginx.vim'
-    Plug 'stsewd/fzf-checkout.vim'
     Plug 'fatih/vim-go'
     Plug 'jparise/vim-graphql'
     Plug 'sheerun/vim-polyglot'
@@ -69,7 +69,7 @@ let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
 let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
-
+set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_action = {
