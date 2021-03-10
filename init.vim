@@ -25,6 +25,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'fatih/vim-go'
     Plug 'jparise/vim-graphql'
     Plug 'sheerun/vim-polyglot'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    Plug 'tpope/vim-surround'
     " Themes
     Plug 'Rigellute/shades-of-purple.vim'
     Plug 'morhetz/gruvbox'
@@ -34,6 +36,11 @@ call plug#begin(stdpath('data') . '/plugged')
 call plug#end()
 
 
+" - `ds`
+" argument
+"
+"
+"
 
 
 " Global Options
@@ -58,7 +65,7 @@ set ruler
 set cursorline
 set scrolloff=8
 set mouse+=a
-colorscheme shades_of_purple
+colorscheme gruvbox
 
 
 
