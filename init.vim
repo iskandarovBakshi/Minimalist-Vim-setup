@@ -27,6 +27,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'tpope/vim-surround'
+    Plug 'easymotion/vim-easymotion'
     " Themes
     Plug 'Rigellute/shades-of-purple.vim'
     Plug 'morhetz/gruvbox'
@@ -73,7 +74,7 @@ let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -g  ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
@@ -101,7 +102,7 @@ nnoremap <silent> <leader>, :noh<CR>
 " Buffers list fzf
 noremap <silent> <leader>b :Buffers<CR>
 " Emmet toggle
-imap <silent> <leader>e <C-y>,
+imap <silent> <leader>em <C-y>,
 " Quit buffer
 nmap <silent> <leader>q <leader>h:bd #<CR>
 " Previous Buffer
@@ -140,6 +141,12 @@ inoremap <silent> <C-v> <ESC>"+pA
 nnoremap gdh :diffget //2<CR>
 " Accept right in merge conflict
 nnoremap gdl :diffget //3<CR>
+
+nmap <leader><leader>. <Plug>(easymotion-repeat)
+nmap <leader><leader>f <Plug>(easymotion-fl)
+nmap <leader><leader>j <Plug>(easymotion-overwin-line)
+nmap <leader><leader>k <Plug>(easymotion-overwin-line)
+nmap <leader><leader>w <Plug>(easymotion-overwin-w)
 
 if has('nvim')
     tmap <silent> <M-h> <C-\><C-n><C-w>h
