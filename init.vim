@@ -36,11 +36,6 @@ call plug#begin(stdpath('data') . '/plugged')
 call plug#end()
 
 
-" - `ds`
-" argument
-"
-"
-"
 
 
 " Global Options
