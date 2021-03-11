@@ -25,6 +25,7 @@ call plug#begin(has("nvim") ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'fatih/vim-go'
     Plug 'jparise/vim-graphql'
     Plug 'sheerun/vim-polyglot'
+
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'tpope/vim-surround'
     Plug 'easymotion/vim-easymotion'
