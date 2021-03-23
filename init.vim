@@ -35,6 +35,7 @@ call plug#begin(has("nvim") ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ayu-theme/ayu-vim'
+    Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 call plug#end()
 
 
@@ -62,7 +63,7 @@ set ruler
 set cursorline
 set scrolloff=8
 set mouse+=a
-colorscheme gruvbox
+colorscheme spaceduck
 
 
 
