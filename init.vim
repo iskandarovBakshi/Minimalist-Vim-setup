@@ -63,6 +63,12 @@ set ruler
 set cursorline
 set scrolloff=8
 set mouse+=a
+set termguicolors
+if exists('+termguicolors')
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
+endif
 colorscheme spaceduck
 
 
@@ -73,8 +79,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let NERDTreeShowHidden=1
 let g:shades_of_purple_airline = 1
-let g:airline_theme='shades_of_purple'
-set termguicolors
+let g:airline_theme='badwolf'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $FZF_DEFAULT_COMMAND = 'ag -g  ""'
 let g:fzf_action = {
